@@ -59,13 +59,13 @@ const checkUser = (req,res,next)=>{
    
 }
 app.get('/user',checkUser,async (req,res)=>{
-    await mongoos.connect('mongodb+srv://Deny:admin@cluster0.2qxkvq3.mongodb.net/?retryWrites=true&w=majority')
+    await mongoos.connect('mongodb+srv://Deny:***@cluster0.2qxkvq3.mongodb.net/?retryWrites=true&w=majority')
     const user = await User.findOne({email:req.user.mail})
     res.send(user)
 })
 
 app.post('/login', async(req,res)=>{
-    await mongoos.connect('mongodb+srv://Deny:admin@cluster0.2qxkvq3.mongodb.net/?retryWrites=true&w=majority')
+    await mongoos.connect('mongodb+srv://Deny:***@cluster0.2qxkvq3.mongodb.net/?retryWrites=true&w=majority')
     const {email, password} = req.body
     const user = await User.findOne({email})
 

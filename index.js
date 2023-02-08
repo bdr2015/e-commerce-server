@@ -90,7 +90,7 @@ app.post('/login', async(req,res)=>{
 
 app.post("/register",async (req,res)=>{
     
-    mongoos.connect('mongodb+srv://Deny:admin@cluster0.2qxkvq3.mongodb.net/?retryWrites=true&w=majority')
+    mongoos.connect('mongodb+srv://Deny:***@cluster0.2qxkvq3.mongodb.net/?retryWrites=true&w=majority')
     let findUser = await User.findOne({email:req.body.email})
     if(findUser){
         res.send('User has been already regidtered')
